@@ -1,5 +1,5 @@
 fn main() {
-    for x in 0..=5 {
-        println!("{}", x);
-    }
+    let loc = Location(1, 2);
 }
+
+struct Location(i32, i32);
