@@ -1,6 +1,8 @@
 fn main() {
-    let mut x = 54;
-    println!("{}", x);
-    x = 13;
-    println!("{}", x);
+    let (x, y) = tuple_func(1);
+    println!("x:{}, y: {}", x, y);
+}
+
+fn tuple_func(x: i32) -> (i32, i32) {
+    (x, x + 1)
 }
