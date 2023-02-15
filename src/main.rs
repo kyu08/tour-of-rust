@@ -1,13 +1,7 @@
-fn main() -> Result<(), String> {
-    let age = 19;
-    let v = int_to_result(age)?;
-    println!("{}", v);
-    Ok(())
-}
+fn main() {
+    let i32_vec = vec![1, 2, 3];
 
-fn int_to_result(age: i32) -> Result<i32, String> {
-    if age > 18 {
-        return Ok(12);
+    for int in i32_vec.iter() {
+        println!("{}", int)
     }
-    Err(String::from("you are 未成年！"))
 }
