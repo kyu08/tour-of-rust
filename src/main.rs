@@ -1,20 +1,14 @@
-struct User {
-    name: String,
-    age: Option<u8>,
-}
-
 fn main() {
-    let u = User {
-        name: String::from("a"),
-        age: Some(1),
-    };
-
-    println!("{},{}", u.name, age_to_string(u.age))
+    match int_to_result(100) {
+        Ok(a) => println!("{}円つかっていいよ", a),
+        Err(e) => println!("{}", e),
+    }
 }
 
-fn age_to_string(age: Option<u8>) -> String {
-    match age {
-        Some(a) => a.to_string(),
-        None => String::from("not registered"),
+fn int_to_result(age: i32) -> Result<i32, String> {
+    let number = 18;
+    if age > number {
+        return Ok(12);
     }
+    Err(String::from("you are 未成年！"))
 }
