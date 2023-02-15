@@ -1,29 +1,20 @@
-#![allow(dead_code)] // この行でコンパイラのwaringsメッセージを止める
-
-enum Species {
-    Crab,
-    Octopus,
-    Fish,
-    Clam,
-}
-
-struct SeaCreature {
-    species: Species,
+struct User {
     name: String,
-    age: i32,
+    age: Option<u8>,
 }
 
 fn main() {
-    let ferris = SeaCreature {
-        species: Species::Crab,
-        name: String::from("ferris"),
-        age: 3,
+    let u = User {
+        name: String::from("a"),
+        age: Some(1),
     };
 
-    match ferris.species {
-        Species::Crab => println!("crab"),
-        Species::Octopus => println!("octopus"),
-        Species::Fish => println!("fish"),
-        Species::Clam => println!("clam"),
+    println!("{},{}", u.name, age_to_string(u.age))
+}
+
+fn age_to_string(age: Option<u8>) -> String {
+    match age {
+        Some(a) => a.to_string(),
+        None => String::from("not registered"),
     }
 }
