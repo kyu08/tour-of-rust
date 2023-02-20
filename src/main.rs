@@ -1,7 +1,5 @@
 fn main() {
-    let str = "hi🦀";
-    match str.find('🦀') {
-        Some(v) => println!("Got -> {}", v),
-        None => println!("There is not any crabs..."),
-    };
+    let chars = "hi".chars().collect::<Vec<char>>();
+    println!("{}", chars.len());
+    println!("{}", chars[3] as u32);
 }
