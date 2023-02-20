@@ -1,7 +1,7 @@
 fn main() {
-    let i32_vec = vec![1, 2, 3];
-
-    for int in i32_vec.iter() {
-        println!("{}", int)
-    }
+    let str = "hi🦀";
+    match str.find('🦀') {
+        Some(v) => println!("Got -> {}", v),
+        None => println!("There is not any crabs..."),
+    };
 }
